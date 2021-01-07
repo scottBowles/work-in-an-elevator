@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Work in an Elevator</title>
+<link rel="stylesheet" href="./Work in an Elevator_files/reset.css"><link rel="stylesheet" href="./Work in an Elevator_files/styles.css"></head>
+
+<body>
+    <nav>
+        <ul class="navItems">
+            <li><button id="eighthAndPennTab" class="tab selected">Eighth and Penn</button></li>
+            <li><button id="centuryTab" class="tab">Century</button></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="eighthAndPennView">
+            <ol id="eighthAndPennList"><li><button class="completed">1</button></li><li><button class="completed">2</button></li><li><button class="completed">3</button></li><li><button class="completed">4</button></li><li><button class="completed">5</button></li><li><button class="completed">6</button></li><li><button class="completed">7</button></li><li><button class="completed">8</button></li><li><button class="completed">9</button></li><li><button class="completed">10</button></li><li><button class="completed">11</button></li><li><button class="completed">12</button></li></ol>
+        </div>
+        <div id="centuryView" class="hidden">
+            <ol id="centuryList"><li><button class="completed">br</button></li><li><button class="completed">l</button></li><li><button class="completed">2r</button></li><li><button class="completed">2</button></li><li><button class="completed">3</button></li><li><button class="completed">3r</button></li><li><button class="completed">4</button></li><li><button class="completed">5</button></li><li><button class="completed">6</button></li><li><button class="completed">6r</button></li><li><button class="completed">7</button></li><li><button class="completed">7r</button></li><li><button class="completed">8</button></li><li><button class="completed">9</button></li><li><button class="completed">10</button></li><li><button class="completed">11</button></li></ol>
+        </div>
+    </main>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<script src="./Work in an Elevator_files/index.js.download"></script>
+
+</body></html>
