@@ -1,4 +1,6 @@
 /* eslint-disable max-classes-per-file */
+
+// Data for App
 const buildings = [
   {
     name: 'Eighth and Penn',
@@ -18,12 +20,13 @@ const buildings = [
       '2',
       '1',
     ],
+    isDefault: true,
   },
   {
     name: 'Century',
     buttons: [
       'BR',
-      'l',
+      '1',
       '2R',
       '2',
       '3',
@@ -39,9 +42,14 @@ const buildings = [
       '10',
       '11',
     ],
+    isDefault: false,
   },
 ];
 
+/**
+ * Renders App with nav and building views
+ * @param {HTMLnode} mount DOM node to which the app will be added as innerHTML
+ */
 class App {
   constructor(mount) {
     this.mount = mount;
@@ -53,35 +61,39 @@ class App {
   }
 
   render() {
-    const navHTML = this.buildingViews.reduce(
-      (buildingView, acc) =>
-        `${acc}
-        <li>
-          <button class="tab selected">${buildingView.name}</button>
-        </li> `,
-      ''
-    );
-
-    const buildingViewHTML = this.buildingViews.reduce(
-      (buildingView, acc) =>
-        `${acc}
-        <li>
-          <button class="tab selected">${buildingView.render()}</button>
-        </li>`
-    );
-
     this.mount.innerHTML = `
       <nav>
         <ul class="navItems">
-          ${navHTML}
+          ${this.buildingViews
+            .map(
+              (view) => `
+            <li>
+              <button class="tab ${view.isDefault && 'selected'}">${
+                view.name
+              }</button>
+            </li>
+          `
+            )
+            .join('')}
         </ul>
       </nav>
       <main>
-        ${buildingViewHTML}
+        ${this.buildingViews
+          .map(
+            (view) => `
+          <div ${view.isDefault || "class='hidden'"}>
+            ${view.render()}
+          </div>`
+          )
+          .join('')}
       </main>`;
   }
 }
 
+/**
+ * Elevator Button component
+ * @param {string} text Button text
+ */
 class ElevatorButton {
   constructor(text) {
     this.text = text;
@@ -95,22 +107,28 @@ class ElevatorButton {
   }
 }
 
+/**
+ * View for buildings
+ * @param {string} name Building name
+ * @param {boolean} isDefault Determines whether view will be shows on initial render
+ */
 class BuildingView {
-  constructor(name) {
+  constructor(name, isDefault) {
     this.name = name;
+    this.isDefault = isDefault;
     this.elevatorButtons = [];
   }
 
   render() {
-    let btnsHTML = '';
-    for (const btn of this.elevatorButtons) {
-      btnsHTML += `<li>${btn.render()}</li>`;
-    }
-
     return `
-      <div class='container>
+      <div class='container'>
         <ol class="buttonsContainer">
-          ${btnsHTML}
+          ${this.elevatorButtons
+            .map(
+              (btn) =>
+                `<li class="elevatorButtonContainer">${btn.render()}</li>`
+            )
+            .join('')}
         </ol>
       </div>
     `;
@@ -121,18 +139,59 @@ class BuildingView {
   }
 }
 
-const root = document.getElementById('root');
-const app = new App(root);
+/**
+ *
+ * @param {HTMLnode} mount DOM node to which the app will be added as innerHTML
+ * @param {array} buildingData Building data -- each building should have name, buttons, isDefault properties
+ */
+function startApp(mount, buildingData) {
+  const app = new App(mount);
 
-for (const building of buildings) {
-  const buildingView = new BuildingView(building.name);
+  for (const building of buildingData) {
+    const buildingView = new BuildingView(building.name, building.isDefault);
 
-  for (const btn of building.buttons) {
-    const elevatorButton = new ElevatorButton(btn);
-    buildingView.addButton(elevatorButton);
+    for (const btn of building.buttons) {
+      const elevatorButton = new ElevatorButton(btn);
+      buildingView.addButton(elevatorButton);
+    }
+
+    app.addBuildingView(buildingView);
   }
 
-  app.addBuildingView(buildingView);
+  app.render();
 }
 
-app.render();
+const root = document.getElementById('root');
+startApp(root, buildings);
+
+/**
+ * EVENT LISTENERS
+ */
+
+/** Select tab listeners */
+const tabs = [...document.querySelectorAll('.tab')];
+
+function selectTab(selectedTab) {
+  tabs.forEach((tab) => {
+    if (tab === selectedTab) {
+      tab.classList.add('selected');
+    } else {
+      tab.classList.remove('selected');
+    }
+  });
+}
+
+tabs.forEach((tab) =>
+  tab.addEventListener('click', (event) => selectTab(event.target))
+);
+
+/** Complete button listeners */
+const btns = [...document.querySelectorAll('.elevatorButton')];
+
+function toggleCompleted(btn) {
+  btn.classList.toggle('completed');
+}
+
+btns.forEach((btn) =>
+  btn.addEventListener('click', (event) => toggleCompleted(event.target))
+);
