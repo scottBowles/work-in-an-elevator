@@ -2,6 +2,11 @@
   --bg-color: #ffffff;
   --trek-main: #e14826;
   --bg-darken: rgba(0, 0, 0, 0.63);
+  font-family: "Hind", sans-serif;
+}
+
+* {
+  font-family: "Hind", sans-serif;
 }
 
 .hidden {
@@ -10,41 +15,66 @@
 
 body {
   max-width: 500px;
-  margin: 50px auto;
+  height: 100vh;
+  margin: 0 auto;
   background-image: linear-gradient(var(--bg-darken), var(--bg-darken)), url("./trek.jpg");
 }
 
+main {
+  height: calc(100vh - 70px);
+}
+
 nav {
-  height: 50px;
+  height: 70px;
+  padding-top: 20px;
 }
 
 .navItems {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.navItem {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.tab {
+  padding: 2.5px 10px;
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+.tab.selected {
+  background-color: var(--trek-main);
 }
 
 button {
   border: 0;
+  font-size: 18px;
   background-color: var(--bg-color);
-}
-
-button.selected {
-  background-color: var(--trek-main);
 }
 
 .buttonsContainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 200px;
+  height: calc(100vh - 220px);
   margin: auto;
   flex-direction: row-reverse;
 }
 
 .elevatorButton {
-  --dimension: 30px;
+  --dimension: 40px;
   border-radius: 50%;
+  /* border: 1px solid black; */
   width: var(--dimension);
   height: var(--dimension);
+  font-size: 20px;
+  box-shadow: 5px 3px 5px -1px #000;
 }
 
 .elevatorButton.completed {
@@ -54,5 +84,42 @@ button.selected {
 .elevatorButtonContainer {
   width: 48%;
   text-align: center;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.bottomContainer {
+  height: 150px;
+  width: 100%;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.bottom {
+  height: 10px;
+  z-index: -1;
+  width: 100%;
+  background-color: var(--trek-main);
+  position: absolute;
+  bottom: 0;
+}
+
+.bottomText {
+  color: white;
+  opacity: 0.4;
+  font-size: 90px;
+  text-align: center;
+  line-height: 58px;
+}
+
+.buildingView {
+  height: 100%;
 }

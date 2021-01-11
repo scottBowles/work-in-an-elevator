@@ -3,7 +3,7 @@
 // Data for App
 const buildings = [
   {
-    name: 'Eighth and Penn',
+    name: 'Eighth & Penn',
     buttons: [
       '',
       'R',
@@ -20,29 +20,29 @@ const buildings = [
       '2',
       '1',
     ],
-    isDefault: true,
+    isDefault: false,
   },
   {
-    name: 'Century',
+    name: 'Century Building',
     buttons: [
-      'BR',
-      '1',
-      '2R',
-      '2',
-      '3',
-      '3R',
-      '4',
-      '5',
-      '6',
-      '6R',
-      '7',
-      '7R',
-      '8',
-      '9',
-      '10',
       '11',
+      '10',
+      '9',
+      '8',
+      '7R',
+      '7',
+      '6R',
+      '6',
+      '5',
+      '4',
+      '3R',
+      '3',
+      '2',
+      '2R',
+      'L',
+      'BR',
     ],
-    isDefault: false,
+    isDefault: true,
   },
 ];
 
@@ -67,7 +67,7 @@ class App {
           ${this.buildingViews
             .map(
               (view) => `
-            <li>
+            <li class="navItem">
               <button class="tab ${view.isDefault && 'selected'}">${
                 view.name
               }</button>
@@ -81,7 +81,7 @@ class App {
         ${this.buildingViews
           .map(
             (view) => `
-          <div ${view.isDefault || "class='hidden'"}>
+          <div class="buildingView ${view.isDefault || 'hidden'}">
             ${view.render()}
           </div>`
           )
@@ -122,6 +122,7 @@ class BuildingView {
   render() {
     return `
       <div class='container'>
+      
         <ol class="buttonsContainer">
           ${this.elevatorButtons
             .map(
@@ -130,6 +131,9 @@ class BuildingView {
             )
             .join('')}
         </ol>
+        
+        <div class='bottomContainer'><div class='bottomText'>Century Building</div></div>
+        <div class='bottom'></div>
       </div>
     `;
   }
@@ -195,3 +199,5 @@ function toggleCompleted(btn) {
 btns.forEach((btn) =>
   btn.addEventListener('click', (event) => toggleCompleted(event.target))
 );
+
+// TODO: Add localStorage for changes
