@@ -20,7 +20,7 @@ const buildings = [
       '2',
       '1',
     ],
-    isDefault: false,
+    isDefault: true,
   },
   {
     name: 'Century Building',
@@ -42,7 +42,7 @@ const buildings = [
       'L',
       'BR',
     ],
-    isDefault: true,
+    isDefault: false,
   },
 ];
 
@@ -86,7 +86,13 @@ class App {
           </div>`
           )
           .join('')}
-      </main>`;
+      </main>
+      <footer>
+        
+          <div class='bottomText'>Century Building</div>
+          <div class='bottom'></div>
+        
+      </footer>`;
   }
 }
 
@@ -132,8 +138,8 @@ class BuildingView {
             .join('')}
         </ol>
         
-        <div class='bottomContainer'><div class='bottomText'>Century Building</div></div>
-        <div class='bottom'></div>
+        
+
       </div>
     `;
   }
