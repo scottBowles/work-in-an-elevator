@@ -13,7 +13,7 @@ export function ElevatorBtn({ localStorageKey, text }) {
   return (
     <button
       type="button"
-      className={`elevatorButton ${completed && 'completed'}`}
+      className={completed && 'completed'}
       onClick={() => setCompleted((prevState) => !prevState)}
     >
       {text}

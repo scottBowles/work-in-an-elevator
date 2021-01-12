@@ -14,10 +14,17 @@ html {
   font-family: "Hind", sans-serif;
 }
 
+button {
+  border: 0;
+  font-size: 18px;
+  background-color: var(--bg-color);
+}
+
 #container {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #container.century {
@@ -35,50 +42,56 @@ html {
 nav {
   max-width: 360px;
   padding-top: 20px;
+  margin-bottom: 20px;
   display: flex;
+  justify-content: center;
 }
 
-.navItems {
+nav ul {
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
 }
 
-.navItem {
-  margin-bottom: 10px;
+nav li {
+  
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.tab {
+nav button {
   padding: 2.5px 10px;
   border-radius: 16px;
   background-color: transparent;
   color: white;
 }
 
-.tab.selected {
+nav button.selected {
   background-color: var(--trek-main);
   color: black;
 }
 
-button {
-  border: 0;
-  font-size: 18px;
-  background-color: var(--bg-color);
+main {
+  height: 100%;
 }
 
-.buttonsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 200px;
-  margin: auto;
-  flex-direction: row-reverse;
+.elevator {
+  height: 100%;
 }
 
-.elevatorButton {
-  --dimension: 40px;
+.elevator ol {
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  justify-items: center;
+  direction: rtl;
+  height: 100%;
+}
+
+.elevator button {
+  --dimension: calc(100vh / 16);
   border-radius: 50%;
   width: var(--dimension);
   height: var(--dimension);
@@ -86,33 +99,21 @@ button {
   box-shadow: 5px 3px 5px -1px #000;
 }
 
-.elevatorButton.completed {
+.elevator button.completed {
   background-color: var(--trek-main);
 }
 
-.elevatorButtonContainer {
-  width: 48%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.container {
-  position: relative;
-}
-
 footer {
-  height: 150px;
+  padding-top: 18px;
   width: 100%;
   opacity: 0.6;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  position: absolute;
-  bottom: 0;
 }
 
-.bottomText {
+.footerText {
   color: white;
 
   font-size: 90px;
@@ -122,21 +123,17 @@ footer {
   max-width: 320px;
 }
 
-.bottomText.eighthAndPenn {
+.footerText.eighthAndPenn {
   opacity: 0.55;
 }
 
-.bottomText.century {
+.footerText.century {
   opacity: 0.45;
 }
 
-.bottom {
+.bottomBar {
   height: 10px;
   z-index: -1;
   width: 100%;
   background-color: var(--trek-main);
-}
-
-.buildingView {
-  /* height: 100%; */
 }
