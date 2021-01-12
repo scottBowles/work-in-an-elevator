@@ -2,6 +2,7 @@ import React from 'react';
 import { ElevatorBtn } from './ElevatorBtn';
 
 export function Elevator({ building }) {
+  console.log({ building });
   return (
     <main>
       <div className="buildingView">

@@ -4,24 +4,20 @@ import { Elevator } from './Elevator';
 import { Footer } from './Footer';
 import { buildingData } from '../buildingData';
 import { useLocalStorage } from '../useLocalStorage';
+import { resetOnNewDate } from '../utils';
 
 export function App() {
+  const defaultBuilding = buildingData.eighthAndPenn;
+
   const [building, setBuilding] = useLocalStorage(
     'currentBuilding',
-    buildingData.eighthAndPenn
+    defaultBuilding
   );
 
+  const resetState = () => setBuilding(defaultBuilding);
+
   useEffect(() => {
-    try {
-      const storedDate = window.localStorage.getItem('date');
-      const currentDate = new Date().toDateString();
-      if (storedDate !== currentDate) {
-        window.localStorage.clear();
-        window.localStorage.setItem('date', currentDate);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+    resetOnNewDate(resetState);
   }, []);
 
   return (

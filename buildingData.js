@@ -19,7 +19,6 @@ export const buildingData = {
       '2',
       '1',
     ],
-    isDefault: false,
   },
   century: {
     slug: 'century',
@@ -42,6 +41,5 @@ export const buildingData = {
       'L',
       'BR',
     ],
-    isDefault: true,
   },
 };
