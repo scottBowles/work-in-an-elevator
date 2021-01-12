@@ -1,3 +1,4 @@
+// slug must === key
 export const buildingData = {
   eighthAndPenn: {
     slug: 'eighthAndPenn',

@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Nav } from './Nav';
 import { Elevator } from './Elevator';
 import { Footer } from './Footer';
 import { buildingData } from '../buildingData';
+import { useLocalStorage } from '../useLocalStorage';
 
 export function App() {
-  const [building, setBuilding] = useState(buildingData.eighthAndPenn);
+  const [building, setBuilding] = useLocalStorage(
+    'currentBuilding',
+    buildingData.eighthAndPenn
+  );
+
+  useEffect(() => {
+    try {
+      const storedDate = window.localStorage.getItem('date');
+      const currentDate = new Date().toDateString();
+      if (storedDate !== currentDate) {
+        window.localStorage.clear();
+        window.localStorage.setItem('date', currentDate);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
 
   return (
     <div id="container" className={building.slug}>
@@ -19,10 +36,3 @@ export function App() {
     </div>
   );
 }
-
-/**
- *
- * Give each button the ability to change state
- * Hook in localStorage to each state change
- *
- */

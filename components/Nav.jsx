@@ -4,15 +4,15 @@ export function Nav({ buildings, currentBuilding, changeBuilding }) {
   return (
     <nav>
       <ul className="navItems">
-        {Object.entries(buildings).map(([buildingKey, building], index) => (
+        {Object.values(buildings).map((building, index) => (
           <li className="navItem" key={index}>
             <button
               type="button"
-              className={`tab ${building === currentBuilding && 'selected'} ${
-                currentBuilding.slug
-              }`}
+              className={`tab ${
+                building.slug === currentBuilding.slug && 'selected'
+              } ${currentBuilding.slug}`}
               onClick={() => {
-                changeBuilding(buildingKey);
+                changeBuilding(building.slug);
               }}
             >
               {building.name}
