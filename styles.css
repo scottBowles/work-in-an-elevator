@@ -17,19 +17,18 @@ html {
   display: none;
 }
 
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  background: linear-gradient(var(--bg-darken), var(--bg-darken)), url("./trek.jpg") top center no-repeat;
+#container {
+  height: 100vh;
+  background: linear-gradient(var(--bg-darken), var(--bg-darken)),
+    url("./trek.jpg") top center no-repeat;
   display: grid;
   grid-template-rows: 70px auto 150px;
-  justify-items: center;
+  place-items: center;
 }
 
 nav {
   max-width: 360px;
   padding-top: 20px;
-  border: 1px solid green;
   display: flex;
 }
 
@@ -73,7 +72,6 @@ button {
 .elevatorButton {
   --dimension: 40px;
   border-radius: 50%;
-  /* border: 1px solid black; */
   width: var(--dimension);
   height: var(--dimension);
   font-size: 20px;
@@ -92,7 +90,6 @@ button {
 
 .container {
   position: relative;
-  /* height: 100%; */
 }
 
 footer {
@@ -100,10 +97,9 @@ footer {
   width: 100%;
   opacity: 0.6;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  position: absolute;
-  bottom: 0;
 }
 
 .bottom {
@@ -111,8 +107,6 @@ footer {
   z-index: -1;
   width: 100%;
   background-color: var(--trek-main);
-  position: absolute;
-  bottom: 0;
 }
 
 .bottomText {
