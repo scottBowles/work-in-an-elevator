@@ -1,5 +1,6 @@
-export const buildingData = [
-  {
+export const buildingData = {
+  eighthAndPenn: {
+    slug: 'eighthAndPenn',
     name: 'Eighth & Penn',
     buttons: [
       '',
@@ -19,7 +20,8 @@ export const buildingData = [
     ],
     isDefault: false,
   },
-  {
+  century: {
+    slug: 'century',
     name: 'Century Building',
     buttons: [
       '11',
@@ -41,4 +43,4 @@ export const buildingData = [
     ],
     isDefault: true,
   },
-];
+};

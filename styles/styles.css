@@ -14,18 +14,22 @@ html {
   font-family: "Hind", sans-serif;
 }
 
-.hidden {
-  display: none;
-}
-
 #container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#container.century {
+  background: linear-gradient(var(--bg-darken-century), var(--bg-darken-century)),
+    url("../assets/centuryBuilding.jpg") bottom center no-repeat, #415e83;
+  background-size: cover;
+}
+
+#container.eighthAndPenn {
   background: linear-gradient(var(--bg-darken-century), var(--bg-darken-century)),
     url("../assets/trek.jpg") bottom center no-repeat, #415e83;
   background-size: cover;
-  display: grid;
-  grid-template-rows: 70px auto 150px;
-  place-items: center;
 }
 
 nav {
@@ -51,10 +55,12 @@ nav {
   padding: 2.5px 10px;
   border-radius: 16px;
   background-color: transparent;
+  color: white;
 }
 
 .tab.selected {
   background-color: var(--trek-main);
+  color: black;
 }
 
 button {
@@ -102,6 +108,8 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .bottom {

@@ -1,12 +1,20 @@
 import React from 'react';
 
-export function Nav({ buildings }) {
+export function Nav({ buildings, currentBuilding, changeBuilding }) {
   return (
     <nav>
       <ul className="navItems">
-        {buildings.map((building, index) => (
+        {Object.entries(buildings).map(([buildingKey, building], index) => (
           <li className="navItem" key={index}>
-            <button className={`tab ${building.isDefault && 'selected'}`}>
+            <button
+              type="button"
+              className={`tab ${building === currentBuilding && 'selected'} ${
+                currentBuilding.slug
+              }`}
+              onClick={() => {
+                changeBuilding(buildingKey);
+              }}
+            >
               {building.name}
             </button>
           </li>

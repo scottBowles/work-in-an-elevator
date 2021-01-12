@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav } from './Nav';
 import { Elevator } from './Elevator';
 import { Footer } from './Footer';
 import { buildingData } from '../buildingData';
 
 export function App() {
+  const [building, setBuilding] = useState(buildingData.eighthAndPenn);
+
   return (
-    <div id="container">
-      <Nav buildings={buildingData} />
-      <Elevator buildings={buildingData} />
-      <Footer currentBuilding="Century Building" />
+    <div id="container" className={building.slug}>
+      <Nav
+        buildings={buildingData}
+        currentBuilding={building}
+        changeBuilding={(buildingKey) => setBuilding(buildingData[buildingKey])}
+      />
+      <Elevator building={building} />
+      <Footer building={building} />
     </div>
   );
 }
 
 /**
  *
- * Render Elevator, Footer based on which building is selected, defaulting to default
- * Do the same for which Nav is active
  * Give each button the ability to change state
  * Hook in localStorage to each state change
  *

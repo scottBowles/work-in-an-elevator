@@ -1,12 +1,20 @@
 import React from 'react';
-import { Building } from './Building';
+import { ElevatorBtn } from './ElevatorBtn';
 
-export function Elevator({ buildings }) {
+export function Elevator({ building }) {
   return (
     <main>
-      {buildings.map((building) => (
-        <Building building={building} />
-      ))}
+      <div className="buildingView">
+        <div className="container">
+          <ol className="buttonsContainer">
+            {building.buttons.map((btn) => (
+              <li className="elevatorButtonContainer" key={building.slug + btn}>
+                <ElevatorBtn localStorageKey={building.slug + btn} text={btn} />
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </main>
   );
 }
