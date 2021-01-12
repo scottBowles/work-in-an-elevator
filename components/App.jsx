@@ -3,18 +3,18 @@ import { Nav } from './Nav';
 import { Elevator } from './Elevator';
 import { Footer } from './Footer';
 import { buildingData } from '../buildingData';
-import { useLocalStorage } from '../useLocalStorage';
-import { resetOnNewDate } from '../utils';
+import { resetOnNewDate, useLocalStorage } from '../utils';
 
 export function App() {
   const defaultBuilding = buildingData.eighthAndPenn;
-
   const [building, setBuilding] = useLocalStorage(
     'currentBuilding',
     defaultBuilding
   );
 
-  const resetState = () => setBuilding(defaultBuilding);
+  const resetState = () => {
+    setBuilding(defaultBuilding);
+  };
 
   useEffect(() => {
     resetOnNewDate(resetState);
