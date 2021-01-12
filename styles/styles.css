@@ -106,10 +106,28 @@ footer {
   opacity: 0.6;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: absolute;
   bottom: 0;
+}
+
+.bottomText {
+  color: white;
+
+  font-size: 90px;
+  text-align: center;
+  line-height: 60px;
+  margin-bottom: 15px;
+  max-width: 320px;
+}
+
+.bottomText.eighthAndPenn {
+  opacity: 0.55;
+}
+
+.bottomText.century {
+  opacity: 0.45;
 }
 
 .bottom {
@@ -117,14 +135,6 @@ footer {
   z-index: -1;
   width: 100%;
   background-color: var(--trek-main);
-}
-
-.bottomText {
-  color: white;
-  opacity: 0.4;
-  font-size: 90px;
-  text-align: center;
-  line-height: 58px;
 }
 
 .buildingView {

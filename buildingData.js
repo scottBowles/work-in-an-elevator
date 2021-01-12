@@ -3,6 +3,7 @@ export const buildingData = {
   eighthAndPenn: {
     slug: 'eighthAndPenn',
     name: 'Eighth & Penn',
+    shortName: 'Eighth & Penn',
     buttons: [
       '',
       'R',
@@ -23,6 +24,7 @@ export const buildingData = {
   century: {
     slug: 'century',
     name: 'Century Building',
+    shortName: 'Century',
     buttons: [
       '11',
       '10',
