@@ -2,6 +2,7 @@
   --bg-color: #ffffff;
   --trek-main: #e14826;
   --bg-darken: rgba(0, 0, 0, 0.63);
+  --bg-darken-century: rgba(0, 0, 0, 0.43);
   font-family: "Hind", sans-serif;
 }
 
@@ -19,8 +20,9 @@ html {
 
 #container {
   height: 100vh;
-  background: linear-gradient(var(--bg-darken), var(--bg-darken)),
-    url("./trek.jpg") top center no-repeat;
+  background: linear-gradient(var(--bg-darken-century), var(--bg-darken-century)),
+    url("../assets/trek.jpg") bottom center no-repeat, #415e83;
+  background-size: cover;
   display: grid;
   grid-template-rows: 70px auto 150px;
   place-items: center;

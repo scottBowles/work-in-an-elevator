@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav } from './Nav';
 import { Elevator } from './Elevator';
 import { Footer } from './Footer';
-import { buildingData } from './buildingData';
+import { buildingData } from '../buildingData';
 
 export function App() {
   return (
