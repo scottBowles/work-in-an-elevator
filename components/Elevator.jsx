@@ -11,7 +11,11 @@ export function Elevator({ building }) {
               <li />
             ) : (
               <li key={building.slug + btn}>
-                <ElevatorBtn localStorageKey={building.slug + btn} text={btn} />
+                <ElevatorBtn
+                  square={building.slug === 'century'}
+                  localStorageKey={building.slug + btn}
+                  text={btn}
+                />
               </li>
             )
           )}

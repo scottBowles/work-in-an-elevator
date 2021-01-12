@@ -14,6 +14,10 @@ html {
   font-family: "Hind", sans-serif;
 }
 
+*:focus {
+  outline: 0;
+}
+
 button {
   border: 0;
   font-size: 18px;
@@ -92,15 +96,30 @@ main {
 
 .elevator button {
   --dimension: calc(100vh / 16);
-  border-radius: 50%;
   width: var(--dimension);
   height: var(--dimension);
+  border-radius: 50%;
+  background-color: #b9b9b9;
+  box-shadow: 5px 3px 10px -1px #000, inset 5px 3px 3px -6px white;
   font-size: 20px;
-  box-shadow: 5px 3px 5px -1px #000;
 }
 
 .elevator button.completed {
-  background-color: var(--trek-main);
+  background-color: var(--trek-main); 
+}
+
+.elevator button.square {
+  --dimension: calc(100vh / 18);
+  width: var(--dimension);
+  height: var(--dimension);
+  border-radius: 0;
+  background-color: #CDCFD0;
+  box-shadow: inset 0 0 2px 1px white, 0 0 0 1px white;
+}
+
+.elevator button.square.completed {
+  background-color: var(--trek-main); 
+  box-shadow: 0 0 0 1px white;
 }
 
 footer {
