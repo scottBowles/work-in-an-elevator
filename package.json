@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "parcel ./src/index.html --open",
-    "build": "parcel --experimental-scope-hoisting ./src/index.html",
+    "build": "parcel ./src/index.html",
     "postbuild": "workbox generateSW"
   },
   "repository": {
