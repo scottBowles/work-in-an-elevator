@@ -7,8 +7,9 @@
 }
 
 html,
-body {
+body, #root {
   height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 * {
@@ -96,6 +97,7 @@ main {
 
 .elevator button {
   --dimension: calc(100vh / 16);
+  --dimension: calc(var(--vh, 1vh) * 100 / 16);
   width: var(--dimension);
   height: var(--dimension);
   border-radius: 50%;
@@ -110,6 +112,7 @@ main {
 
 .elevator button.square {
   --dimension: calc(100vh / 18);
+  --dimension: calc(var(--vh, 1vh) * 100 / 18);
   width: var(--dimension);
   height: var(--dimension);
   border-radius: 0;
