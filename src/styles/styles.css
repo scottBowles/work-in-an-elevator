@@ -134,12 +134,16 @@ footer {
 
 .footerText {
   color: white;
-
   font-size: 90px;
   text-align: center;
   line-height: 60px;
   margin-bottom: 15px;
   max-width: 320px;
+  overflow: hidden;
+  /* this pt & mt handles the font size overblowing the 
+  container and keeping buttons from being clicked */
+  padding-top: 15px;
+  margin-top: -15px;
 }
 
 .footerText.eighthAndPenn {
