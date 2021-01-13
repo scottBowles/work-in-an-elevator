@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <title>Work in an Elevator</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script src="./index.js"></script>
+  <script>
+    const sw = 'service-worker.js'; // this is needed because parcel will not recognize this as a file and will fail to process
+
+    navigator.serviceWorker
+      .register(sw)
+      .then((registration) => {
+        registration.onupdatefound = () => {
+          const installingWorker = registration.installing;
+          if (installingWorker == null) {
+            return;
+          }
+          installingWorker.onstatechange = () => {
+            if (installingWorker.state === 'installed') {
+              if (navigator.serviceWorker.controller) {
+                console.log(
+                  'New content is available and will be used when all ' +
+                    'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
+                );
+              } else {
+                console.log('Content is cached for offline use.');
+              }
+            }
+          };
+        };
+      })
+      .catch((error) => {
+        console.error('Error during service worker registration:', error);
+      });
+  </script>
+</body>
+
+</html>

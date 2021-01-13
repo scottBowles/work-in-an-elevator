@@ -2,10 +2,11 @@
   "name": "work-in-an-elevator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel --experimental-scope-hoisting ./src/index.html",
+    "postbuild": "workbox generateSW"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "workbox-cli": "^6.0.2"
   },
   "dependencies": {
     "react": "^17.0.1",
