@@ -1,11 +1,10 @@
 {
-  "short_name": "Elevators",
   "name": "Work in an Elevator",
-  "icons": [
-
-  ],
+  "short_name": "Elevators",
   "start_url": ".",
+  "icons": [],
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait"
 }
