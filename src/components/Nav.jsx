@@ -8,8 +8,10 @@ export function Nav({ buildings, currentBuilding, changeBuilding }) {
           <li key={index}>
             <button
               type="button"
-              className={building.slug === currentBuilding.slug && 'selected'}
-              onClick={() => changeBuilding(building.slug)}
+              className={
+                building.slug === currentBuilding.slug ? 'selected' : ''
+              }
+              onClick={() => changeBuilding(building.id)}
             >
               {building.name}
             </button>

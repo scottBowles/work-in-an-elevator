@@ -1,6 +1,6 @@
-// slug must === key
-export const buildingData = {
-  eighthAndPenn: {
+export const buildingData = [
+  {
+    id: 0,
     slug: 'eighthAndPenn',
     name: 'Eighth & Penn',
     shortName: 'Eighth & Penn',
@@ -21,7 +21,8 @@ export const buildingData = {
       '1',
     ],
   },
-  century: {
+  {
+    id: 1,
     slug: 'century',
     name: 'Century Building',
     shortName: 'Century',
@@ -44,4 +45,4 @@ export const buildingData = {
       'BR',
     ],
   },
-};
+];

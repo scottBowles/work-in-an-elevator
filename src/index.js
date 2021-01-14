@@ -6,3 +6,7 @@ import { applyWindowHeightvhFix } from './utils';
 applyWindowHeightvhFix();
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+// Remove console.log
+// Add event listener for vh fix
+// Implement swipe between screens

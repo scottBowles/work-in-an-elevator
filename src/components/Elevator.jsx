@@ -6,9 +6,9 @@ export function Elevator({ building }) {
     <main>
       <div className="elevator">
         <ol>
-          {building.buttons.map((btn) =>
+          {building.buttons.map((btn, i) =>
             btn === '' ? (
-              <li />
+              <li key={building.slug + btn + i} />
             ) : (
               <li key={building.slug + btn}>
                 <ElevatorBtn
