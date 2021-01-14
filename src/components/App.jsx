@@ -33,9 +33,9 @@ export function App() {
 
   const handleScroll = (event) => {
     const { scrollLeft, offsetWidth } = event.target;
-    if (scrollLeft === offsetWidth) {
+    if (scrollLeft > offsetWidth / 2) {
       setCurrentBuilding(buildingData[1]);
-    } else if (scrollLeft === 0) {
+    } else if (scrollLeft <= offsetWidth / 2) {
       setCurrentBuilding(buildingData[0]);
     }
   };
@@ -49,13 +49,13 @@ export function App() {
 
   return (
     <div className="container" onScroll={handleScroll}>
+      <Nav
+        buildings={buildingData}
+        currentBuilding={currentBuilding}
+        changeBuilding={changeBuilding}
+      />
       {buildingData.map((building) => (
         <BuildingScreen building={building} key={building.id}>
-          <Nav
-            buildings={buildingData}
-            currentBuilding={building}
-            changeBuilding={changeBuilding}
-          />
           <Elevator building={building} />
           <Footer building={building} />
         </BuildingScreen>
