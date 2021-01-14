@@ -42,18 +42,20 @@ export function App() {
   }, []);
 
   return (
-    <div className="container" onScroll={handleScroll}>
+    <>
       <Nav
         buildings={buildingData}
         currentBuilding={currentBuilding}
         changeBuilding={changeBuilding}
       />
-      {buildingData.map((building) => (
-        <div className={`building ${building.slug}`} key={building.id}>
-          <Elevator building={building} />
-          <Footer building={building} />
-        </div>
-      ))}
-    </div>
+      <main className="container" onScroll={handleScroll}>
+        {buildingData.map((building) => (
+          <div className={`building ${building.slug}`} key={building.id}>
+            <Elevator building={building} />
+            <Footer building={building} />
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
