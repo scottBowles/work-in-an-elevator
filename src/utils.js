@@ -62,3 +62,12 @@ export function applyWindowHeightvhFix() {
     document.documentElement.style.setProperty('--vh', `${newvh}px`);
   });
 }
+
+export function scrollToBuildingScreen(id, behavior) {
+  const container = document.querySelector('.container');
+  container.scroll({
+    top: 0,
+    left: id * window.innerWidth,
+    behavior,
+  });
+}

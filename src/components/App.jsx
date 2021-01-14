@@ -3,8 +3,11 @@ import { Nav } from './Nav';
 import { Elevator } from './Elevator';
 import { Footer } from './Footer';
 import { buildingData } from '../buildingData';
-import { resetOnNewDate, useLocalStorage } from '../utils';
-import { BuildingScreen } from './BuildingScreen';
+import {
+  resetOnNewDate,
+  scrollToBuildingScreen,
+  useLocalStorage,
+} from '../utils';
 
 export function App() {
   const defaultBuilding = buildingData[0];
@@ -13,39 +16,30 @@ export function App() {
     defaultBuilding
   );
 
-  const resetState = () => {
+  function resetState() {
     setCurrentBuilding(defaultBuilding);
-  };
+  }
 
-  const scrollToBuildingScreen = (id, behavior) => {
-    const container = document.querySelector('.container');
-    container.scroll({
-      top: 0,
-      left: id * window.innerWidth,
-      behavior,
-    });
-  };
-
-  useEffect(() => {
-    resetOnNewDate(resetState);
-    scrollToBuildingScreen(currentBuilding.id, 'auto');
-  }, []);
-
-  const handleScroll = (event) => {
+  function handleScroll(event) {
     const { scrollLeft, offsetWidth } = event.target;
     if (scrollLeft > offsetWidth / 2) {
       setCurrentBuilding(buildingData[1]);
     } else if (scrollLeft <= offsetWidth / 2) {
       setCurrentBuilding(buildingData[0]);
     }
-  };
+  }
 
-  const changeBuilding = (id) => {
+  function changeBuilding(id) {
     const clickedBuilding = buildingData.find((el) => el.id === id);
     if (clickedBuilding === undefined) return;
     scrollToBuildingScreen(id, 'smooth');
-    setCurrentBuilding(clickedBuilding);
-  };
+    // scroll will call setCurrentBuilding to set currentBuilding correctly
+  }
+
+  useEffect(() => {
+    resetOnNewDate(resetState);
+    scrollToBuildingScreen(currentBuilding.id, 'auto');
+  }, []);
 
   return (
     <div className="container" onScroll={handleScroll}>
@@ -55,10 +49,10 @@ export function App() {
         changeBuilding={changeBuilding}
       />
       {buildingData.map((building) => (
-        <BuildingScreen building={building} key={building.id}>
+        <div className={`building ${building.slug}`} key={building.id}>
           <Elevator building={building} />
           <Footer building={building} />
-        </BuildingScreen>
+        </div>
       ))}
     </div>
   );
