@@ -6,6 +6,15 @@ Visit the site live at https://workinanelevator.netlify.app/
 
 *This app works fine on desktop but shines on mobile as an installable web app. Visit in the browser and select `install app` from the menu to see!*
 
+## Table of Contents
+
+1. [Technology Stack](#technology-stack)
+1. [Purpose](#purpose)
+1. [Task Requirements](#task-requirements)
+1. [Local Installation](#local-installation)
+
+## Technology Stack
+
 [![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=000)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=fff)](https://whatwg.org/)
@@ -37,4 +46,38 @@ Navigation between buildings is intuitively obvious with the buttons up top, but
 
 The app uses the color and font from the client's employer, and the building images are immediately recognizable for the client. It was important that the app feel professional and give the client a sense of excitement for learning something new. No matter how functional, an app that felt like a worksheet would always feel like a demeaning chore.
 
+## Local Installation
 
+### Requirements
+- [Node.js with npm](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+
+### Instructions
+
+Clone this repository and change directory into the folder
+
+Using SSH
+
+```bash
+git clone git@github.com:scottBowles/work-in-an-elevator.git
+cd work-in-an-elevator
+```
+
+Using https
+
+```bash
+git clone https://github.com/scottBowles/work-in-an-elevator.git
+cd work-in-an-elevator
+```
+
+Install dependencies
+
+`npm i`
+
+Start the local server
+
+`npm start`
+
+The site should be available at
+
+`http://localhost:1234/`
