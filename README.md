@@ -20,6 +20,7 @@ Visit the site live at https://workinanelevator.netlify.app/
 [![HTML](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=fff)](https://whatwg.org/)
 [![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff)](https://www.w3.org/Style/CSS/)
 [![Workbox](https://img.shields.io/badge/-Workbox-fb8c00)](https://developers.google.com/web/tools/workbox/)
+[![Parcel](https://img.shields.io/badge/-Parcel-DCAC77)](https://parceljs.org/)
 [![Babel](https://img.shields.io/badge/-Babel-030301?logo=babel)](https://babeljs.io/)
 [![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint)](https://eslint.org/)
 [![Prettier](https://img.shields.io/badge/-Prettier-24292e?logo=prettier)](https://prettier.io/)
@@ -32,11 +33,11 @@ This app was made for a client who needed help keeping track of which elevator f
 ## Task Requirements
 
 The basic requirements were:
-- **Simple to use**: Must be accessible to use for someone without basic smartphone skills.
-- **Low bar of entry for daily use**: Navigating to a website each day would be a significant barrier to use.
-- **Immediately intuitive**: Must provide an immediately intuitive representation of the elevator buttons.
-- **Professional look and feel**: Must make the client feel good about what he is doing, and not like he is using a tool other workers might consider beneath them.
-- **Introduces common smartphone interface features**: Should introduce a manageable number of features useful for navigating mobile apps.
+1. **Simple to use**: Must be accessible to use for someone without basic smartphone skills.
+1. **Low bar of entry for daily use**: Navigating to a website each day would be a significant barrier to use.
+1. **Immediately intuitive**: Must provide an immediately intuitive representation of the elevator buttons.
+1. **Professional look and feel**: Must make the client feel good about what he is doing, and not like he is using a tool other workers might consider beneath them.
+1. **Introduces common smartphone interface features**: Should introduce a manageable number of features useful for navigating mobile apps.
 
 Making the app installable on his phone as a progressive web app was crucial for daily use. Navigating to a url or a bookmark in a browser would quickly engender disuse.
 
@@ -54,30 +55,30 @@ The app uses the color and font from the client's employer, and the building ima
 
 ### Instructions
 
-Clone this repository and change directory into the folder
+1. Clone this repository and change directory into the folder
 
-Using SSH
+    - Using SSH
 
-```bash
-git clone git@github.com:scottBowles/work-in-an-elevator.git
-cd work-in-an-elevator
-```
+        ```bash
+        git clone git@github.com:scottBowles/work-in-an-elevator.git
+        cd work-in-an-elevator
+        ```
 
-Using https
+    - Using https
 
-```bash
-git clone https://github.com/scottBowles/work-in-an-elevator.git
-cd work-in-an-elevator
-```
+        ```bash
+        git clone https://github.com/scottBowles/work-in-an-elevator.git
+        cd work-in-an-elevator
+        ```
 
-Install dependencies
+1. Install dependencies
 
-`npm i`
+    `npm i`
 
-Start the local server
+1. Start the local server
 
-`npm start`
+    `npm start`
 
-The site should be available at
+1. And the site should be available!
 
-`http://localhost:1234/`
+    `http://localhost:1234/`
