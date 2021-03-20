@@ -4,7 +4,7 @@
 
 Visit the site live at https://workinanelevator.netlify.app/
 
-*This app works fine on desktop but shines on mobile as an installable web app. Visit in the browser and select `install app` from the menu to see!*
+_This app works fine on desktop but shines on mobile as an installable web app. Visit in the browser and select `install app` from the menu to see!_
 
 ## Table of Contents
 
@@ -28,11 +28,12 @@ Visit the site live at https://workinanelevator.netlify.app/
 
 ## Purpose
 
-This app was made for a client who needed help keeping track of which elevator floors he'd collected trash from. He had limited experience with his smartphone, having difficulty performing simple tasks like answering calls, but also bristled at the idea of a paper worksheet. This app had the dual purpose of helping him work with dignity and enabling him to grow in confidence with his phone.
+This app was made for a client who needed help keeping track of which elevator floors he'd collected trash from. He had limited experience with his smartphone, having difficulty performing simple tasks like answering calls, but also bristled at the idea of a paper worksheet. This app was written with the dual purpose of helping him work with dignity and enabling him to grow in confidence with his phone.
 
 ## Task Requirements
 
 The basic requirements were:
+
 1. **Simple to use**: Must be accessible to use for someone without basic smartphone skills.
 1. **Low bar of entry for daily use**: Navigating to a website each day would be a significant barrier to use.
 1. **Immediately intuitive**: Must provide an immediately intuitive representation of the elevator buttons.
@@ -43,13 +44,14 @@ Making the app installable on his phone as a progressive web app was crucial for
 
 When making the interface, I took care to make the buttons look similar to how they do on the actual elevators. For one building, that means circular buttons with shadow below and light above to give some shape. For the other building, that means square buttons illuminated around the edges. Building images and names further serve as markers to ensure the correct building screen is being used.
 
-Navigation between buildings is intuitively obvious with the buttons up top, but easier by swiping side to side. I wanted to offer confusion-free design while encouraging use of a common mobile feature.
+Navigation between buildings is intuitively obvious with the buttons up top, but more easily accomplished by swiping side to side. I wanted to offer confusion-free design while encouraging use of a common mobile feature.
 
 The app uses the color and font from the client's employer, and the building images are immediately recognizable for the client. It was important that the app feel professional and give the client a sense of excitement for learning something new. No matter how functional, an app that felt like a worksheet would always feel like a demeaning chore.
 
 ## Local Installation
 
 ### Requirements
+
 - [Node.js with npm](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 
@@ -57,28 +59,28 @@ The app uses the color and font from the client's employer, and the building ima
 
 1. Clone this repository and change directory into the folder
 
-    - Using SSH
+   - Using SSH
 
-        ```bash
-        git clone git@github.com:scottBowles/work-in-an-elevator.git
-        cd work-in-an-elevator
-        ```
+     ```bash
+     git clone git@github.com:scottBowles/work-in-an-elevator.git
+     cd work-in-an-elevator
+     ```
 
-    - Using https
+   - Using https
 
-        ```bash
-        git clone https://github.com/scottBowles/work-in-an-elevator.git
-        cd work-in-an-elevator
-        ```
+     ```bash
+     git clone https://github.com/scottBowles/work-in-an-elevator.git
+     cd work-in-an-elevator
+     ```
 
 1. Install dependencies
 
-    `npm i`
+   `npm i`
 
 1. Start the local server
 
-    `npm start`
+   `npm start`
 
 1. And the site should be available!
 
-    `http://localhost:1234/`
+   `http://localhost:1234/`
